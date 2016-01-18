@@ -6,8 +6,48 @@
 $( document ).ready(function() {
     var userInfo = {
         firstName: 'Jane',
-        lastName: 'Doe'
-    };
+        lastName: 'Doe' };
+  $( "#loginBtn" ).click(function() {
+    var email = $("#email").val();
+    var password = $("#password").val();
+    if (email ==='' || password ===''){
+      alert("Login incomplete")
+    } else {
+      //hide #login-form
+ 
+        $("#login-form").hide();
+      //show user-info
+      $(".user-info").show()
+    }
+  });
+  $( ".logoutBtn" ).click(function() {
+        //Hide user-info
+        $(".user-info").hide();
+        //Clear fields
+        $("#email").val('');
+        $("#password").val(''); //Resolve issue
+        //Show #login-form
+        $("#login-form").show();
+    });            
+    // TODO: Create a function to listen for clicks on all the "View Details"
+    // buttons so that when a user clicks a "View Details" button they see
+    // the content contained in the elements with the class "details" in the
+    // proper part of the screen.
+    //      1. When user clicks a "view details" button, find the parent of that element.
+    //      2. Within that parent, find all the elements that have the class `details`.
+  
+
+  $(".view-details").click(function(){
+     $(this).closest("div").children('.details').toggle();
+     
+  });
+
+
+  //      3. Toggle visibility of all the elements within that parent with the class `details`.
+    //      4. Change the text of the "view details" button to read "hide details" so the user
+    //          understands they can hide the text again.
+  
+                       
     var voteCounts = {
         great: 0,
         greatest: 0,
@@ -24,15 +64,7 @@ $( document ).ready(function() {
     //          a base requirement.)
 
 
-    // TODO: Create a function to listen for clicks on all the "View Details"
-    // buttons so that when a user clicks a "View Details" button they see
-    // the content contained in the elements with the class "details" in the
-    // proper part of the screen.
-    //      1. When user clicks a "view details" button, find the parent of that element.
-    //      2. Within that parent, find all the elements that have the class `details`.
-    //      3. Toggle visibility of all the elements within that parent with the class `details`.
-    //      4. Change the text of the "view details" button to read "hide details" so the user
-    //          understands they can hide the text again.
+  
 
     // TODO: Create a function that listens for clicks on the voting buttons and
     // looks at the `data-vote` attribute on each button to see what was voted for,
