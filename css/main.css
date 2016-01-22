@@ -8,10 +8,15 @@
 .user-info {
     display: none;
 }
-.details {
+/* .details {
     display: none;
+} */
+#thankYou{
+  text-align:center;
+font-size:300%;
+color:#fff;
+text-shadow:#fff 0 0 10px;
 }
-
 /* Styles to make the page look OK. */
 .form-control {
     height: 25px;
